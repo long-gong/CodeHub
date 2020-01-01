@@ -1,0 +1,8 @@
+.idea
+.vscode
+
+*.o
+*.pbd
+*Test
+ann-result-writer-test 
+timer-test
