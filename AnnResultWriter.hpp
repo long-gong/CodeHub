@@ -13,10 +13,12 @@
 namespace AnnResults {
 
 // default header & format for external memory implementations
-// query id, k id (id for the k-th nearest neighbor), distance for the k-th nearest neighbor, 
+// query id, k id (id for the k-th nearest neighbor), distance for the k-th nearest neighbor,
 // ground truth distance, query time (microseconds), total IOs
 const char * _DEFAULT_HEADER_E_ = "#qid,#kid,#rid,rdist,gdist,ratio,qtime(us),#io";
-const char * _DEFAULT_FMT_E_ = "iiiffffi";
+const char * _DEFAULT_FMT_E_ = "iiiiiffi";
+const char * _DEFAULT_HEADER_I_ = "#qid,#kid,#rid,rdist,gdist,ratio,qtime(us)";
+const char * _DEFAULT_FMT_I_ = "iiiiiff";
 } // namespace AnnResults
 
 class AnnResultWriter {
