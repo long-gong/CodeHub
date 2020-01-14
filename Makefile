@@ -5,7 +5,7 @@ RM = gio trash -f
 
 
 COMMON_HDR = Exception.h
-TARGETS =  ann-result-writer-test timer-test string-utils-test filename-utils-test
+TARGETS =  ann-result-writer-test timer-test string-utils-test filename-utils-test benEigen
 SRCS = $(wildcard *.cc)
 OBJS = $(SRCS:.cc=.o)
 
@@ -22,6 +22,9 @@ string-utils-test: StringUtilsTest.o StringUtils.hpp $(COMMON_HDR)
 	-$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)
 
 filename-utils-test: FilenameUtilsTest.o FilenameUtils.hpp StringUtils.hpp $(COMMON_HDR)
+	-$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)
+
+benEigen: benEigen.o 
 	-$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)
 	
 .PHONY: clean 
