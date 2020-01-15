@@ -1,11 +1,11 @@
 CXX = g++ 
-CXXFLAGS = -std=c++14 -Wall 
+CXXFLAGS = -std=c++17 -Wall -O3
 LDFLAGS = 
 RM = gio trash -f
 
 
 COMMON_HDR = Exception.h
-TARGETS =  ann-result-writer-test timer-test string-utils-test filename-utils-test benEigen
+TARGETS =  ann-result-writer-test timer-test string-utils-test filename-utils-test benchEigen bitop
 SRCS = $(wildcard *.cc)
 OBJS = $(SRCS:.cc=.o)
 
@@ -24,7 +24,10 @@ string-utils-test: StringUtilsTest.o StringUtils.hpp $(COMMON_HDR)
 filename-utils-test: FilenameUtilsTest.o FilenameUtils.hpp StringUtils.hpp $(COMMON_HDR)
 	-$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)
 
-benEigen: benEigen.o 
+benchEigen: benchEigen.o 
+	-$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)
+
+bitop: bitop.o 
 	-$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)
 	
 .PHONY: clean 
